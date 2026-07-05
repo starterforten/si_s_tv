@@ -75,7 +75,19 @@ button:hover {
 
 <script>
 function join() {
-    window.location.href = "../";
+
+    // Grab everything after ? in the URL
+    const query = window.location.search;
+
+    // Send user into VDO.Ninja (root of your fork)
+    let target = "../";
+
+    // If invite parameters exist, preserve them
+    if (query && query.length > 1) {
+        target += query;
+    }
+
+    window.location.href = target;
 }
 </script>
 
