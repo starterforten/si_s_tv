@@ -67,7 +67,9 @@ button:hover {
 <script>
 function join() {
     const query = window.location.search;
-    const forkBase = "https://mygithub.github.io/myfork/";
+
+    // Correct base for your fork
+    const forkBase = "https://starterforten.github.io/si_s_tv/landing/";
 
     if (query && query.length > 1) {
         window.location.href = forkBase + query;
@@ -76,6 +78,7 @@ function join() {
     }
 }
 </script>
+
 
 </body>
 </html>
