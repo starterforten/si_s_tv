@@ -5,12 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Welcome</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
     background: #111;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Changed from Arial to Montserrat */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +37,12 @@ p {
     font-size: 18px;
     line-height: 1.5;
 }
+
+/* Custom class to force extra bold 900 weight */
+.extra-bold-line {
+    font-weight: 900;
+}
+
 button {
     margin-top: 30px;
     padding: 15px 40px;
@@ -42,6 +52,7 @@ button {
     background: #D91783;
     color: white;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif; /* Ensures button text also uses Montserrat */
 }
 button:hover {
     background: #D91783;
@@ -58,7 +69,7 @@ button:hover {
     <p>
         When you are ready: <br> 
         Click 'Join JAW TV' to connect your camera and microphone.<br> 
-        <i> We can visualise YOUR podcast. Please email <b>info@jaw-mgmt.com</b> </i>
+        <span class="extra-bold-line"><i>We can visualise YOUR podcast. Please email <span>Info@jaw-mgmt.com</span></i></span>
     </p>
     
     <button onclick="join()"><b>Join JAW TV</b></button>
@@ -82,7 +93,6 @@ function join() {
     window.location.href = target;
 }
 </script>
-
 
 </body>
 </html>
