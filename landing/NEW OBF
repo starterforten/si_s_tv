@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+    font-family: 'Montserrat', sans-serif; /* Changed from Arial to Montserrat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1 {
+    margin-top: 25px;
+    font-weight: normal;
+}
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Custom class to force extra bold 700 weight */
+.extra-bold-line {
+    font-weight: 700;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    background: #D91783;
+    color: white;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif; /* Ensures button text also uses Montserrat */
+}
+button:hover {
+    background: #D91783;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <img src="../images/bannernew.gif" alt="Banner" style="width: 100%; max-width: 1920px; height: auto;">
+    <h1>Welcome</h1>
+
+    <p>
+        When you are ready: <br> 
+        Click 'Join JAW TV' to connect your camera and microphone.<br> 
+        <span class="extra-bold-line">JAW TV can visualise YOUR podcast. Please email <span>info@jaw-mgmt.com</span></span>
+    </p>
+    
+    <button onclick="join()"><b>Join JAW TV</b></button>
+</div>
+
+<script>
+function join() {
+
+    // Everything after the ?
+    let target = window.location.search.substring(1);
+
+    if (!target) {
+        alert("Missing destination link.");
+        return;
+    }
+
+    // Decode any URL encoding
+    target = decodeURIComponent(target);
+
+    // Redirect exactly to the supplied URL
+    window.location.href = target;
+}
+</script>
+
+</body>
+</html>
